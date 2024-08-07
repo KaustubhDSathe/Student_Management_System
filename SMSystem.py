@@ -93,7 +93,7 @@ def addstudent():
     dobentry.place(x=300,y=390)
     ############------------------------- add button
     submitbtn = Button(addroot,text='Submit',font=('roman',15),width=20,bd=5,activebackground='blue',activeforeground='white',
-                      bg='green2',command=submitadd)
+                      bg='ivory2',command=submitadd)
     submitbtn.place(x=150,y=460)
 
 
@@ -243,7 +243,7 @@ def searchstudent():
     #dateentry.place(x=300,y=450)
     ############------------------------- add button
     submitbtn = Button(searchroot,text='Submit',font=('roman',15),width=20,bd=5,activebackground='blue',activeforeground='white',
-                      bg='green2',command=search)
+                      bg='ivory2',command=search)
     submitbtn.place(x=150,y=490)
 
 
@@ -377,7 +377,7 @@ def updatestudent():
     #timeentry.place(x=300,y=510)
     ############------------------------- add button
     submitbtn = Button(updateroot,text='Submit',font=('roman',15),width=20,bd=5,activebackground='blue',activeforeground='white',
-                      bg='green2',command=update)
+                      bg='ivory2',command=update)
     submitbtn.place(x=160,y=500)
     cc = studenmttable.focus()
     content = studenmttable.item(cc)
@@ -477,7 +477,7 @@ def Connectdb():
     passwordentry.place(x=250,y=130)
 
     #-------------------------------- Connectdb button
-    submitbutton = Button(dbroot,text='Submit',font=('roman',15),bg='green2',bd=5,width=20,activebackground='blue',
+    submitbutton = Button(dbroot,text='Submit',font=('roman',15),bg='ivory2',bd=5,width=20,activebackground='blue',
                           activeforeground='white',command=submitdb)
     submitbutton.place(x=150,y=190)
 
@@ -515,59 +515,59 @@ from tkinter import *
 from tkinter import Toplevel,messagebox,filedialog
 from tkinter.ttk import Treeview
 from tkinter import ttk
-import pandas
+#import pandas
 import pymysql
 import time
 root = Tk()
 root.title('Student Management System')
-root.config(bg='pink')
-root.geometry('1174x700+200+50')
+root.config(bg='burlywood1')
+root.geometry('1470x750+200+50')
 root.iconbitmap('mana.ico')
 root.resizable(False,False)
 ############################################################################################################  Frames
 ##---------------------------------------------------------------------------- dataentry frame
 
 DataEntryFrame = Frame(root,bg='skyblue',relief=GROOVE,borderwidth=5)
-DataEntryFrame.place(x=10,y=80,width=500,height=600)
-frontlabel = Label(DataEntryFrame,text='--------------Welcome--------------',width=30,font=('arial',22,'italic bold'),bg='skyblue')
+DataEntryFrame.place(x=10,y=100,width=450,height=630)
+frontlabel = Label(DataEntryFrame,text='--------------Data Entry--------------',width=30,font=('AdonisC',22,'italic bold'),bg='skyblue')
 frontlabel.pack(side=TOP,expand=True)
-addbtn = Button(DataEntryFrame,text='1. Add Student',width=25,font=('chiller',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
+addbtn = Button(DataEntryFrame,text='1. Add Student',width=25,font=('AdonisC',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
                 activeforeground='white',command=addstudent)
 addbtn.pack(side=TOP,expand=True)
 
-searchbtn = Button(DataEntryFrame,text='2. Search Student',width=25,font=('chiller',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
+searchbtn = Button(DataEntryFrame,text='2. Search Student',width=25,font=('AdonisC',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
                 activeforeground='white',command=searchstudent)
 searchbtn.pack(side=TOP,expand=True)
 
-deletebtn = Button(DataEntryFrame,text='3. Delete Student',width=25,font=('chiller',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
+deletebtn = Button(DataEntryFrame,text='3. Delete Student',width=25,font=('AdonisC',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
                 activeforeground='white',command=deletestudent)
 deletebtn.pack(side=TOP,expand=True)
 
-updatebtn = Button(DataEntryFrame,text='4. Update Student',width=25,font=('chiller',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
+updatebtn = Button(DataEntryFrame,text='4. Update Student',width=25,font=('AdonisC',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
                 activeforeground='white',command=updatestudent)
 updatebtn.pack(side=TOP,expand=True)
 
-showallbtn = Button(DataEntryFrame,text='5. Show All',width=25,font=('chiller',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
+showallbtn = Button(DataEntryFrame,text='5. Show All',width=25,font=('AdonisC',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
                 activeforeground='white',command=showstudent)
 showallbtn.pack(side=TOP,expand=True)
 
-resetbtn = Button(DataEntryFrame,text='5. Reset',width=25,font=('chiller',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
+resetbtn = Button(DataEntryFrame,text='5. Reset',width=25,font=('AdonisC',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
                 activeforeground='white',command=deleteall)
 resetbtn.pack(side=TOP,expand=True)
 
 
-exitbtn = Button(DataEntryFrame,text='7.  Exit',width=25,font=('chiller',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
+exitbtn = Button(DataEntryFrame,text='7.  Exit',width=25,font=('AdonisC',20,'bold'),bd=6,bg='skyblue3',activebackground='blue',relief=RIDGE,
                 activeforeground='white',command=exitstudent)
 exitbtn.pack(side=TOP,expand=True)
 
 ##-----------------------------------------------------------Show data frame
 ShowDataFrame = Frame(root,bg='gold2',relief=GROOVE,borderwidth=5)
-ShowDataFrame.place(x=550,y=80,width=620,height=600)
+ShowDataFrame.place(x=500,y=100,width=920,height=630)
 
 ##-------------------------------------------------  Showdataframe
 style = ttk.Style()
-style.configure('Treeview.Heading',font=('chiller',20,'bold'),foreground='blue')
-style.configure('Treeview',font=('times',15,'bold'),background='cyan',foreground='black')
+style.configure('Treeview.Heading',font=('AdonisC',20,'bold'),foreground='blue')
+style.configure('Treeview',font=('times',15,'bold'),background='burlywood1',foreground='black')
 scroll_x = Scrollbar(ShowDataFrame,orient=HORIZONTAL)
 scroll_y = Scrollbar(ShowDataFrame,orient=VERTICAL)
 studenmttable = Treeview(ShowDataFrame,columns=('Id','Name','Mobile No','Email','Address','Gender','D.O.B'),
@@ -602,21 +602,21 @@ ss = 'Welcome To Student Management System'
 count = 0
 text = ''
 ##################################
-SliderLabel = Label(root,text=ss,font=('chiller',30,'italic bold'),relief=RIDGE,borderwidth=4,width=35,bg='cyan')
-SliderLabel.place(x=260,y=0)
+SliderLabel = Label(root,text=ss,font=('AdonisC',30,'italic bold'),relief='sunken',borderwidth=4,width=37,bg='slategray1')
+SliderLabel.place(x=290,y=0)
 IntroLabelTick()
 IntroLabelColorTick()
 ############################################################################################################### clock
-clock = Label(root,font=('times',14,'bold'),relief=RIDGE,borderwidth=4,bg='lawn green')
+clock = Label(root,font=('times',14,'bold'),relief=RIDGE,borderwidth=4,bg='skyblue3')
 clock.place(x=0,y=0)
 tick()
 ################################################################################################################## ConnectDatabaseButton
-connectbutton = Button(root,text='Connect To Database',width=23,font=('chiller',19,'italic bold'),relief=RIDGE,borderwidth=4,bg='skyblue2',
+connectbutton = Button(root,text='Connect To Database',width=17,font=('AdonisC',18,'italic bold'),relief=RIDGE,borderwidth=4,bg='skyblue2',
                        activebackground='blue',activeforeground='white',command=Connectdb)
-connectbutton.place(x=930,y=0)
+connectbutton.place(x=1205,y=0)
 
 #################################################################################################################aboutbutton
-connectbutton = Button(root,text='About',width=10,font=('chiller',15,'italic bold'),relief=RIDGE,borderwidth=2,bg='skyblue2',
+connectbutton = Button(root,text='About',width=7,font=('AdonisC',18,'italic bold'),relief=RIDGE,borderwidth=4,bg='skyblue2',
                        activebackground='blue',activeforeground='white',command=about)
-connectbutton.place(x=160,y=0)
+connectbutton.place(x=158,y=0)
 root.mainloop()
